@@ -181,7 +181,7 @@ var isMobile = {
 
     $(function() {
         if (window.location.hash.indexOf('!') > -1) {
-            return App.redirectHashBang();
+            return router.redirectHashBang();
         }
     });
 
