@@ -116,6 +116,7 @@ var isMobile = {
                             var template = Handlebars.compile(source);
                             var html = template(that.collection.toJSON());
                             that.$el.html(html);
+                            lazyLoad();
                         }
                     });
                     return that;
@@ -128,14 +129,24 @@ var isMobile = {
             console.log('Viewing Items Stats');
             var itemsView = Backbone.View.extend({
                 initialize: function() {
-                    console.log(ItemsCollection);
-                    // this.render();
+                    this.collection = new ItemsCollection();
+                    this.collection.bind("reset", _.bind(this.render, this));
+                    this.render();
                 },
                 render: function() {
-                    var source = $('#template-view').html();
-                    var template = Handlebars.compile(source);
-                    var html = template(ItemsCollected.toJSON());
-                    this.$el.html(html);
+                    var that = this;
+                    this.collection.fetch({
+                        success: function(collection) {
+                            var source = $('#template-view').html();
+                            var template = Handlebars.compile(source);
+                            var html = template(that.collection.toJSON());
+                            console.log(that.collection.toJSON());
+                            console.log(Backbone.history.location.hash);
+                            that.$el.html(html);
+                            lazyLoad();
+                        }
+                    });
+                    return that;
                 }
             });
             var ItemsView = new itemsView();
@@ -143,7 +154,38 @@ var isMobile = {
         }
     });
     var router = new Router();
-    Backbone.history.start();
+    Backbone.history.start({
+        pushState: true
+    });
+    $(document).on("click", "a[href^='/']", function(event) {
+        var href, passThrough, url;
+        href = $(event.currentTarget).attr('href');
+        passThrough = href.indexOf('sign_out') >= 0;
+        if (!passThrough && !event.altKey && !event.ctrlKey && !event.metaKey && !event.shiftKey) {
+            event.preventDefault();
+            url = href.replace(/^\//, '').replace('\#\!\/', '');
+            router.navigate(url, {
+                trigger: true
+            });
+            return false;
+        }
+    });
+    window.App = {
+        Models: {},
+        Collections: {},
+        Views: {},
+        redirectHashBang: function() {
+            return window.location = window.location.hash.substring(2);
+        }
+    };
+
+    $(function() {
+        if (window.location.hash.indexOf('!') > -1) {
+            return App.redirectHashBang();
+        }
+    });
+
+
     smoothScroll();
 })();
 
@@ -177,6 +219,10 @@ function smoothScroll() {
     });
 }
 
-$(function() {
+// $(function() {
+//     $('img.lazy').lazyload();
+// });
+
+function lazyLoad() {
     $('img.lazy').lazyload();
-});
+}
