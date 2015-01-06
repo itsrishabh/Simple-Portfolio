@@ -1,0 +1,14 @@
+{
+  "name": "2015",
+  "private": true,
+  "dependencies": {
+    "modernizr": "~2.8.2",
+    "backbone": "~1.1.2",
+    "underscore": "~1.7.0",
+    "scrolling": "~0.1.0",
+    "handlebars": "~2.0.0",
+    "animate.css": "~3.2.0",
+    "normalize.css": "~3.0.2",
+    "jquery": "~2.1.3"
+  }
+}

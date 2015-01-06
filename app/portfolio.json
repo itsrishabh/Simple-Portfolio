@@ -1,0 +1,112 @@
+[{
+    "item_id": 1,
+    "thumbnail": "images/thumbnails/material_calendar.gif",
+    "attachments": {
+        "1": "images/material_calendar/preview_1.png",
+        "2": "images/material_calendar/preview_2.png"
+    },
+    "title": "Material Calendar",
+    "description_short": "A simple exercise trying to improve the default Google Calendar on Android",
+    "description_long": "A simple exercise trying to improve the default Google Calendar on Android"
+}, {
+    "item_id": 2,
+    "thumbnail": "images/thumbnails/inbox_sneak_peak.png",
+    "attachments": {
+        "1": "images/inbox/preview.png"
+    },
+    "title": "Inbox (Sneak Peak)",
+    "description_short": "Sneak peak for something new in 2015!",
+    "description_long": "Sneak peak for something new in 2015!"
+}, {
+    "item_id": 3,
+    "thumbnail": "images/thumbnails/rice.png",
+    "attachments": {
+        "1": "images/rice/preview_1.png",
+        "2": "images/rice/preview_2.png",
+        "3": "images/rice/preview_3.png",
+        "4": "images/rice/preview_4.png",
+        "5": "images/rice/preview_5.png",
+        "6": "images/rice/preview_6.png",
+        "7": "images/rice/preview_7.png",
+        "8": "images/rice/preview_8.png",
+        "9": "images/rice/preview_9.png",
+        "10": "images/rice/preview_10.png",
+        "11": "images/rice/preview_11.png",
+        "12": "images/rice/preview_12.png",
+        "13": "images/rice/preview_13.png",
+        "14": "images/rice/preview_14.png"
+    },
+    "title": "Rice (iOS App)",
+    "description_short": "Rice introduced a new way to trade items",
+    "description_long": "Rice is a new way to trade items, it is an app that is much simpler to use and made exclusively for mobile. Running in BETA since June 2014."
+}, {
+    "item_id": 4,
+    "thumbnail": "images/thumbnails/shoebox.png",
+    "attachments": {
+        "1": "images/shoebox/preview_1.png",
+        "2": "images/shoebox/preview_2.png",
+        "3": "images/shoebox/preview_3.png",
+        "4": "images/shoebox/preview_4.png",
+        "5": "images/shoebox/preview_5.png",
+        "6": "images/shoebox/preview_6.png",
+        "7": "images/shoebox/preview_7.png",
+        "8": "images/shoebox/preview_8.png",
+        "9": "images/shoebox/preview_9.png",
+        "10": "images/shoebox/preview_10.png",
+        "11": "images/shoebox/preview_11.png",
+        "12": "images/shoebox/preview_12.png",
+        "13": "images/shoebox/preview_13.png",
+        "14": "images/shoebox/preview_14.png"
+    },
+    "title": "Shoebox",
+    "description_short": "Shoebox is a home for your memories",
+    "description_long": "Shoebox is an app offering free unlimited photo storage, so you can rediscover your photos anywhere!"
+}, {
+    "item_id": 5,
+    "thumbnail": "images/thumbnails/free_settings_with_tabs.png",
+    "attachments": {
+        "1": "images/free/free_material_settings_with_tabs_1.png",
+        "2": "images/free/free_material_settings_with_tabs_2.png",
+        "3": "images/free/free_material_settings_with_tabs_3.png"
+    },
+    "title": "[Free PSD] Material Design - Settings with Tabs",
+    "description_short": "Download it for free!",
+    "description_long": "<a href='http://rishabh.ca/free/Settings.psd'>Download it for free!</a>"
+}, {
+    "item_id": 6,
+    "thumbnail": "images/thumbnails/free_contact_list.png",
+    "attachments": {
+        "1": "images/free/free_contact_list.png"
+    },
+    "title": "[Free PSD] Material Design - Contact List with Search",
+    "description_short": "Download it for free!",
+    "description_long": "<a href='http://rishabh.ca/free/Contact_List.psd'>Download it for free!</a>"
+}, {
+    "item_id": 7,
+    "thumbnail": "images/thumbnails/free_invoice.png",
+    "attachments": {
+        "1": "images/free/free_invoice.png"
+    },
+    "title": "[Free AI] Invoice",
+    "description_short": "Free Invoicing UI for Illustrator",
+    "description_long": "<a href='http://rishabh.ca/free/free-invoice.ai'>Free Invoicing UI for Illustrator</a>"
+}, {
+    "item_id": 8,
+    "thumbnail": "images/thumbnails/minimal_notes_ui.png",
+    "attachments": {
+        "1": "images/minimal_notes/minimal_notes_ui_1.png",
+        "2": "images/minimal_notes/minimal_notes_ui_2.png"
+    },
+    "title": "Minimal Note-taking UI",
+    "description_short": "Really simple, really easy to use note-taking app (Concept)",
+    "description_long": "I like using evernote, but there's just too much going on at once -- I don't need to share notes, it's cool I can make notebooks but mostly I just need a fast, quick way to take notes."
+}, {
+    "item_id": 9,
+    "thumbnail": "images/thumbnails/simple_landing_page.png",
+    "attachments": {
+        "1": "images/free/simple_landing_page.png"
+    },
+    "title": "[Free PSD] Simple Landing Page",
+    "description_short": "Super simple, super clean.",
+    "description_long": "First mockup for a client. It is sort of old, but it was great at the time. (2012)"
+}]

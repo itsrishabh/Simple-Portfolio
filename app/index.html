@@ -1,0 +1,385 @@
+<!doctype html>
+<html class="no-js">
+
+<head>
+    <meta charset="utf-8">
+    <title>2015</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width">
+    <link rel="shortcut icon" href="/favicon.ico">
+    <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+    <!-- build:css(.) styles/vendor.css -->
+    <!-- bower:css -->
+    <link rel="stylesheet" href="bower_components/animate.css/animate.css" />
+    <link rel="stylesheet" href="bower_components/normalize.css/normalize.css" />
+    <!-- endbower -->
+    <!-- endbuild -->
+    <!-- build:css(.tmp) styles/main.css -->
+    <link rel="stylesheet" href="styles/main.css">
+    <!-- endbuild -->
+    <!-- build:js scripts/vendor/modernizr.js -->
+    <script src="bower_components/modernizr/modernizr.js"></script>
+    <script src="//use.typekit.net/zcm2efi.js"></script>
+    <script>
+    try {
+        Typekit.load();
+    } catch (e) {}
+    </script>
+    <!-- endbuild -->
+
+</head>
+
+<body>
+    <!--[if lt IE 10]>
+      <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+    <![endif]-->
+
+    <div class="row grid animated-fast fadeInDown navigation-overlay">
+        <div class="row-content">
+            <div class="fixed-width">
+                <div class="navigation-mobile">
+                    <ul>
+                        <li>
+                            <a href="/#work">Work</a>
+                        </li>
+                        <li>
+                            <a href="/#resume">Experience</a>
+                        </li>
+                        <li>
+                            <a href="/#contact">Contact</a>
+                        </li>
+                        <li>
+                            <a href="https://dribbble.com/itsrishabh" target="_blank">Dribbble</a>
+                        </li>
+                        <li>
+                            <a href="https://twitter.com/itsrishabh" target="_blank">Twitter</a>
+                        </li>
+                        <li>
+                            <a href="https://ca.linkedin.com/in/rishabhvarshney/" target="_blank">LinkedIn</a>
+                        </li>
+                    </ul>
+                    <div id="mobile-close" class="close">
+                        <i class="icon-close"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <header class="headroom header--fixed" id="headroom">
+        <div class="row grid animated fadeInDown navigation-container">
+            <div class="row-content">
+                <div class="fixed-width">
+                    <div class="navigation">
+                        <div class="column twelve">
+                            <a class="brand keep-left" href="/">
+                                <span class="r">R</span>
+                                <span class="slash">/</span>
+                            </a>
+                            <a class="hamburger keep-right" id="hamburger">
+                                <div class="hamburger-container">
+                                    <i class="icon-menu"></i>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="navigation-hidden animated-fast fadeInDown">
+                            <div class="keep-left">
+                                <ul>
+                                    <li>
+                                        <a href="/#work">Work</a>
+                                    </li>
+                                    <li>
+                                        <a href="/#resume">Experience</a>
+                                    </li>
+                                    <li>
+                                        <a href="/#contact">Contact</a>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="keep-right">
+                                <ul class="social">
+                                    <li>
+                                        <a href="https://dribbble.com/itsrishabh" target="_blank">Dribbble</a>
+                                    </li>
+                                    <li>
+                                        <a href="https://twitter.com/itsrishabh" target="_blank">Twitter</a>
+                                    </li>
+                                    <li>
+                                        <a href="https://ca.linkedin.com/in/rishabhvarshney/" target="_blank">LinkedIn</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <div id="content" class="animated-fast fadeInUp content-container">
+    </div>
+
+    <footer id="footer" class="footer animated fadeInUp">
+        <div class="row">
+            <div class="row-content">
+                <div class="fixed-width">
+                    <div class="footer-content">
+                        <div class="text">
+                            <div class="copy">
+                                &copy;
+                                <script type="text/javascript">
+                                document.write(new Date().getFullYear());
+                                </script>
+                                Rishabh Varshney
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script id="template-home" type="text/x-handlebars-template">
+        <div class='row' id='about'>
+            <div class='row-content'>
+                <div class='fixed-width'>
+                    <div class='me-content'>
+                        <div class='text'>
+                            <h1>
+                                Rishabh Varshney
+                            </h1>
+                            <h2>
+                                I'm a Toronto-based product designer
+                            </h2>
+                            <div class='download'>
+                                <div class='heading'>
+                                    I design and code
+                                </div>
+                                <a href='#contact' class='btn btn-green'>
+                                  Contact Me
+                                </a>
+                            </div>
+                        </div>
+                        <a href='https://github.com/itsrishabh' target='_blank' class='btn btn-download'>
+                          View Source on Github
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class='row' id='work'>
+            <div class='row-content'>
+                <div class='fixed-width'>
+                    <div class='work-content'>
+                        <div class='heading'>
+                            Selected Works
+                        </div>
+                        <div class='work-content-container'>
+                            {{#each this}}
+                            <a class='column third' href='/#/view/{{@index}}'>
+                                <div class='information hidden-mobile'>
+                                    <div class='information-container'>
+                                        <div class='title'>
+                                            {{title}}
+                                        </div>
+                                        <div class='description'>
+                                            {{description_short}}
+                                        </div>
+                                    </div>
+                                </div>
+                                <img src='{{thumbnail}}' class='img-responsive' />
+                                <div class='visible-mobile'>
+                                    <div class='title'>
+                                        {{title}}
+                                    </div>
+                                </div>
+                            </a>
+                            {{/each}}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class='row' id='resume'>
+            <div class='row-content'>
+                <div class='fixed-width'>
+                    <div class='resume-content'>
+                        <div class='heading'>
+                            Work Experience
+                        </div>
+                        <div class='text'>
+                            <div class='row'>
+                                <div class='work-header'>
+                                    <a class='work-company' href='http://rithm.me/' target='_blank' alt='Rithm Messaging Inc.'>
+                                        Rithm Messaging Inc.
+                                    </a>
+                                    <div class='work-title'>
+                                        Product Designer / Front-end Dev
+                                    </div>
+                                    <div class='work-date'>
+                                        July 2013 - Present
+                                    </div>
+                                </div>
+                                <p class='work-description'>
+                                    Working as a product designer means I usually have to hustle and get a lot done in a day. Between working directly on the iOS and Android apps, I code up all of the web pages, Firefox and Kik apps. I get to learn from a combined experience between working on code and designing for various platforms, mobile and desktop.
+                                </p>
+                            </div>
+                            <div class='row'>
+                                <div class='work-header'>
+                                    <a class='work-company' href='http://getmyrice.com/' target='_blank' alt='Basmati Labs Inc.'>
+                                        Basmati Labs Inc.
+                                    </a>
+                                    <div class='work-title'>
+                                        Co-founder / Product Lead / Product Designer
+                                    </div>
+                                    <div class='work-date'>
+                                        November 2013 - Present
+                                    </div>
+                                </div>
+                                <p class='work-description'>
+                                    Flexing those ui/ux muscles while leading the product. I base my decisions on data gathered from the app, this includes how users are using the app, where they are falling off and what they are intent on doing. This process allows me to be analytical as well as challenge myself with newer approaches.
+                                </p>
+                            </div>
+                            <div class='row'>
+                                <div class='work-header'>
+                                    <a class='work-company' href='http://fancrank.com/' target='_blank' alt='FanCrank Inc.'>
+                                        FanCrank Inc.
+                                    </a>
+                                    <div class='work-title'>
+                                        UI/UX Designer / Front-end Dev
+                                    </div>
+                                    <div class='work-date'>
+                                        October 2012 - July 2013
+                                    </div>
+                                </div>
+                                <p class='work-description'>
+                                    Worked on creating a Facebook app which rewards users with points based on their interactions on fan pages. Worked directly with the product manager and the team to create a seamless desktop and mobile experience.
+                                </p>
+                            </div>
+                            <div class='row'>
+                                <div class='work-header'>
+                                    <a class='work-company' href='http://infect.cutc.ca/' target='_blank' alt='CUTC'>
+                                        Canadian Undergraduate Technology Conference
+                                    </a>
+                                    <div class='work-title'>
+                                        UI/UX Designer / Front-end Dev
+                                    </div>
+                                    <div class='work-date'>
+                                        December 2011 - July 2013
+                                    </div>
+                                </div>
+                                <p class='work-description'>
+                                    Setting a visual identity for CUTC, branding and designing a majority of materials including mobile app, web pages, print and any other visual media.
+                                </p>
+                            </div>
+                            <div class='row'>
+                                <div class='work-header'>
+                                    <a class='work-company' href='http://genesys.com/' target='_blank' alt='Genesys'>
+                                        Genesys
+                                    </a>
+                                    <div class='work-title'>
+                                        UI/UX Intern
+                                    </div>
+                                    <div class='work-date'>
+                                        July 2012 - April 2013
+                                    </div>
+                                </div>
+                                <p class='work-description'>
+                                    Working as a user interface and user experience designer on various projects for mobile and desktop applications.
+                                </p>
+                            </div>
+                            <div class='row'>
+                                <div class='work-header'>
+                                    <a class='work-company' href='#'>
+                                        Various
+                                    </a>
+                                    <div class='work-title'>
+                                        Design Lead: Shoebox App, Neuranet Inc., HID Canada, BetterU, EPIC/EpCon
+                                    </div>
+                                    <div class='work-date'>
+                                        2009 - Present
+                                    </div>
+                                </div>
+                                <p class='work-description'>
+                                    User interface and user experience designer on various projects for mobile, tablets and desktop applications.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class='row' id='contact'>
+            <div class='row-content'>
+                <div class='fixed-width'>
+                    <div class='contact-content'>
+                        <div class='heading'>
+                            Contact
+                        </div>
+                        <div class='text'>
+                            <a href='mailto:it.is.rishabh@gmail.com'>
+                                Feel free to send me an email by clicking here
+                            </a>
+                            <p>
+                                or reach me on any of the following social media sites
+                            </p>
+                            <div class='social-media'>
+                                <a href='https://dribbble.com/itsrishabh'>
+                                    <i class='icon-dribbble'></i>
+                                </a>
+                                <a href='https://www.behance.net/rishabhvarshney'>
+                                    <i class='icon-behance'></i>
+                                </a>
+                                <a href='https://twitter.com/itsrishabh'>
+                                    <i class='icon-twitter'></i>
+                                </a>
+                                <a href='https://ca.linkedin.com/in/rishabhvarshney/'>
+                                    <i class='icon-linkedin'></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </script>
+
+    <script id="template-view" type="text/x-handlebars-template">
+        WEEEE
+    </script>
+
+    <!-- build:js(.) scripts/vendor.js -->
+    <!-- bower:js -->
+    <script src="bower_components/jquery/dist/jquery.js"></script>
+    <script src="bower_components/underscore/underscore.js"></script>
+    <script src="bower_components/backbone/backbone.js"></script>
+    <script src="bower_components/handlebars/handlebars.js"></script>
+    <!-- endbower -->
+    <!-- endbuild -->
+
+    <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
+    <script>
+    (function(i, s, o, g, r, a, m) {
+        i['GoogleAnalyticsObject'] = r;
+        i[r] = i[r] || function() {
+            (i[r].q = i[r].q || []).push(arguments)
+        }, i[r].l = 1 * new Date();
+        a = s.createElement(o),
+            m = s.getElementsByTagName(o)[0];
+        a.async = 1;
+        a.src = g;
+        m.parentNode.insertBefore(a, m)
+    })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+
+    ga('create', 'UA-40370156-1', 'auto');
+    ga('send', 'pageview');
+    </script>
+
+    <!-- build:js({app,.tmp}) scripts/main.js -->
+    <script src="scripts/headroom.min.js"></script>
+    <script src="scripts/jquery.headroom.js"></script>
+    <script src="scripts/main.js"></script>
+    <!-- endbuild -->
+</body>
+
+</html>
