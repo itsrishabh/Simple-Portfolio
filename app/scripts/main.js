@@ -176,3 +176,7 @@ function smoothScroll() {
         return false;
     });
 }
+
+$(function() {
+    $('img.lazy').lazyload();
+});

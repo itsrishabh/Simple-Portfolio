@@ -187,7 +187,7 @@
                                         </div>
                                     </div>
                                 </div>
-                                <img src='{{thumbnail}}' class='img-responsive' />
+                                <img class='img-responsive lazy' data-original='{{thumbnail}}' width='100' height='100' />
                                 <div class='visible-mobile'>
                                     <div class='title'>
                                         {{title}}
@@ -354,6 +354,8 @@
     <script src="bower_components/underscore/underscore.js"></script>
     <script src="bower_components/backbone/backbone.js"></script>
     <script src="bower_components/handlebars/handlebars.js"></script>
+    <script src="bower_components/jquery.lazyload/jquery.lazyload.js"></script>
+    <script src="bower_components/jquery.lazyload/jquery.scrollstop.js"></script>
     <!-- endbower -->
     <!-- endbuild -->
 
