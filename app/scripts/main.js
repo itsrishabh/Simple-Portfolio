@@ -97,11 +97,10 @@ var isMobile = {
     var Router = Backbone.Router.extend({
         routes: {
             '': 'homeRoute',
-            'view/:id': 'viewRoute',
+            'view/project_:id': 'viewRoute',
             '*default': 'homeRoute'
         },
         homeRoute: function() {
-            console.log('On Home Page');
             var homeView = Backbone.View.extend({
                 initialize: function() {
                     this.collection = new ItemsCollection();
@@ -126,7 +125,6 @@ var isMobile = {
             $("#content").html(HomeView.el);
         },
         viewRoute: function() {
-            console.log('Viewing Items Stats');
             var itemsView = Backbone.View.extend({
                 initialize: function() {
                     this.collection = new ItemsCollection();
@@ -139,9 +137,16 @@ var isMobile = {
                         success: function(collection) {
                             var source = $('#template-view').html();
                             var template = Handlebars.compile(source);
-                            var html = template(that.collection.toJSON());
-                            console.log(that.collection.toJSON());
-                            console.log(Backbone.history.location.hash);
+                            var handleView = Backbone.history.fragment;
+                            var handledProject = handleView.split('view/project_');
+                            handledProject = handledProject[1];
+                            var actualItem = that.collection.toJSON();
+                            actualItem = actualItem[handledProject];
+                            var html = template(actualItem);
+                            var checkAttachments = actualItem.attachments;
+                            if (checkAttachments.length > 1) {
+                                var moreThanOne = true;
+                            }
                             that.$el.html(html);
                             lazyLoad();
                         }
@@ -155,36 +160,12 @@ var isMobile = {
     });
     var router = new Router();
     Backbone.history.start({
-        pushState: true
-    });
-    $(document).on("click", "a[href^='/']", function(event) {
-        var href, passThrough, url;
-        href = $(event.currentTarget).attr('href');
-        passThrough = href.indexOf('sign_out') >= 0;
-        if (!passThrough && !event.altKey && !event.ctrlKey && !event.metaKey && !event.shiftKey) {
-            event.preventDefault();
-            url = href.replace(/^\//, '').replace('\#\!\/', '');
-            router.navigate(url, {
-                trigger: true
-            });
-            return false;
-        }
-    });
-    window.App = {
-        Models: {},
-        Collections: {},
-        Views: {},
-        redirectHashBang: function() {
-            return window.location = window.location.hash.substring(2);
-        }
-    };
-
-    $(function() {
-        if (window.location.hash.indexOf('!') > -1) {
-            return router.redirectHashBang();
-        }
+        root: '/'
     });
 
+    Handlebars.registerHelper('unless_blank', function(item, block) {
+        return (item && item.replace(/\s/g, "").length) ? block.fn(this) : block.inverse(this);
+    });
 
     smoothScroll();
 })();
@@ -218,10 +199,6 @@ function smoothScroll() {
         return false;
     });
 }
-
-// $(function() {
-//     $('img.lazy').lazyload();
-// });
 
 function lazyLoad() {
     $('img.lazy').lazyload();

@@ -19,12 +19,12 @@
     <!-- endbuild -->
     <!-- build:js scripts/vendor/modernizr.js -->
     <script src="bower_components/modernizr/modernizr.js"></script>
-    <script src="//use.typekit.net/zcm2efi.js"></script>
+    <!-- <script src="//use.typekit.net/zcm2efi.js"></script>
     <script>
     try {
         Typekit.load();
     } catch (e) {}
-    </script>
+    </script> -->
     <!-- endbuild -->
 
 </head>
@@ -72,7 +72,7 @@
                 <div class="fixed-width">
                     <div class="navigation">
                         <div class="column twelve">
-                            <a class="brand keep-left" href="/">
+                            <a class="brand keep-left" href="#">
                                 <span class="r">R</span>
                                 <span class="slash">/</span>
                             </a>
@@ -176,7 +176,7 @@
                         </div>
                         <div class='work-content-container'>
                             {{#each this}}
-                            <a class='column third' href='/view/{{@index}}' data-id='{{@index}}'>
+                            <a class='column third' href='#view/project_{{@index}}' data-id='{{@index}}'>
                                 <div class='information hidden-mobile'>
                                     <div class='information-container'>
                                         <div class='title'>
@@ -345,7 +345,36 @@
     </script>
 
     <script id="template-view" type="text/x-handlebars-template">
-        WEEEE
+        <div class='row animated slideInUp' id='project'>
+            <div class='row-content'>
+                <div class='fixed-width'>
+                    <div class='project-content'>
+                        <div class='heading'>
+                            {{title}}
+                        </div>
+                        <div class='description'>
+                            {{description_long}}
+                            {{#unless_blank download}}
+                            <div class="download">
+                                <a href='{{download}}' class='btn btn-green' target='_blank'>
+                                  Download
+                                </a>
+                            </div>
+                            {{/unless_blank}}
+                        </div>
+                        <div class='project'>
+                            {{#each this.attachments}}
+                              {{#each this}}
+                                  <div class='column full'>
+                                      <img class='img-responsive lazy' data-original='{{this}}' />
+                                  </div>
+                              {{/each}}
+                            {{/each}}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </script>
 
     <!-- build:js(.) scripts/vendor.js -->
@@ -360,7 +389,7 @@
     <!-- endbuild -->
 
     <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
-    <script>
+    <!-- <script>
     (function(i, s, o, g, r, a, m) {
         i['GoogleAnalyticsObject'] = r;
         i[r] = i[r] || function() {
@@ -375,7 +404,7 @@
 
     ga('create', 'UA-40370156-1', 'auto');
     ga('send', 'pageview');
-    </script>
+    </script> -->
 
     <!-- build:js({app,.tmp}) scripts/main.js -->
     <script src="scripts/headroom.min.js"></script>
