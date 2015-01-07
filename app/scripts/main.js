@@ -144,10 +144,12 @@ var isMobile = {
                             actualItem = actualItem[handledProject];
                             var html = template(actualItem);
                             var checkAttachments = actualItem.attachments;
-                            if (checkAttachments.length > 1) {
-                                var moreThanOne = true;
-                            }
                             that.$el.html(html);
+                            if (checkAttachments.length >= 6) {
+                                $('.project .column').addClass('half');
+                            } else {
+                                $('.project .column').addClass('full');
+                            }
                             lazyLoad();
                         }
                     });
@@ -199,6 +201,10 @@ function smoothScroll() {
         return false;
     });
 }
+
+$(function() {
+    $('img.lazy').lazyload();
+});
 
 function lazyLoad() {
     $('img.lazy').lazyload();

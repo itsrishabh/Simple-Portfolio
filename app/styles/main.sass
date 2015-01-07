@@ -337,7 +337,7 @@ body
 				font-weight: 500
 				font-size: 1rem
 
-			.description
+			.description-long
 				font-size: 0.8rem
 				font-weight: 400
 				display: block
@@ -628,10 +628,20 @@ body
 						width: 100%
 
 					.img-responsive
-						padding: 4em
+						padding: 2em
 
-						@media screen and (max-width: 60em)
-							padding: 2em
+
+				.full
+					display: inline-block
+					text-decoration: none
+					position: relative
+					overflow: hidden
+					float: left
+					width: 100%
+					margin: 0
+
+					.img-responsive
+						padding: 2em
 
 		.me-content, .work-content, .resume-content, .contact-content, .project-content
 			@media screen and (max-width: 40em)

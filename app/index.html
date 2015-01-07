@@ -352,7 +352,7 @@
                         <div class='heading'>
                             {{title}}
                         </div>
-                        <div class='description'>
+                        <div class='description-long'>
                             {{description_long}}
                             {{#unless_blank download}}
                             <div class="download">
@@ -365,7 +365,7 @@
                         <div class='project'>
                             {{#each this.attachments}}
                               {{#each this}}
-                                  <div class='column full'>
+                                  <div class='column'>
                                       <img class='img-responsive lazy' data-original='{{this}}' />
                                   </div>
                               {{/each}}
