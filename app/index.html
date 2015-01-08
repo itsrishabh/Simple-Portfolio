@@ -119,7 +119,7 @@
     <div id="content" class="content-container">
     </div>
 
-    <footer id="footer" class="footer animated fadeInUp">
+    <footer id="footer" class="footer animated slideInUp">
         <div class="row">
             <div class="row-content">
                 <div class="fixed-width">
@@ -155,7 +155,7 @@
                                 <div class='heading'>
                                     I design and code
                                 </div>
-                                <a href='#contact' class='btn btn-green'>
+                                <a href='mailto:it.is.rishabh@gmail.com' class='btn btn-green'>
                                   Contact Me
                                 </a>
                             </div>
@@ -200,6 +200,42 @@
                 </div>
             </div>
         </div>
+    </script>
+
+    <script id="template-view" type="text/x-handlebars-template">
+        <div class='row animated slideInUp' id='project'>
+            <div class='row-content'>
+                <div class='fixed-width'>
+                    <div class='project-content'>
+                        <div class='heading'>
+                            {{title}}
+                        </div>
+                        <div class='description-long'>
+                            {{description_long}}
+                            {{#unless_blank download}}
+                            <div class="download">
+                                <a href='{{download}}' class='btn btn-green' target='_blank'>
+                                  Download
+                                </a>
+                            </div>
+                            {{/unless_blank}}
+                        </div>
+                        <div class='project'>
+                            {{#each this.attachments}}
+                              {{#each this}}
+                                  <div class='column'>
+                                      <img class='img-responsive lazy' data-original='{{this}}' />
+                                  </div>
+                              {{/each}}
+                            {{/each}}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </script>
+
+    <script id="template-resume" type="text/x-handlebars-template">
         <div class='row' id='resume'>
             <div class='row-content'>
                 <div class='fixed-width'>
@@ -208,102 +244,24 @@
                             Work Experience
                         </div>
                         <div class='text'>
+                        {{#each this}}
                             <div class='row'>
                                 <div class='work-header'>
-                                    <a class='work-company' href='http://rithm.me/' target='_blank' alt='Rithm Messaging Inc.'>
-                                        Rithm Messaging Inc.
+                                    <a class='work-company' href='http://rithm.me/' target='_blank' alt='{{company}}'>
+                                        {{company}}
                                     </a>
                                     <div class='work-title'>
-                                        Product Designer / Front-end Dev
+                                        {{title}}
                                     </div>
                                     <div class='work-date'>
-                                        July 2013 - Present
+                                        {{date_start}} - {{date-end}}
                                     </div>
                                 </div>
                                 <p class='work-description'>
-                                    Working as a product designer means I usually have to hustle and get a lot done in a day. Between working directly on the iOS and Android apps, I code up all of the web pages, Firefox and Kik apps. I get to learn from a combined experience between working on code and designing for various platforms, mobile and desktop.
+                                    {{description_job}}
                                 </p>
                             </div>
-                            <div class='row'>
-                                <div class='work-header'>
-                                    <a class='work-company' href='http://getmyrice.com/' target='_blank' alt='Basmati Labs Inc.'>
-                                        Basmati Labs Inc.
-                                    </a>
-                                    <div class='work-title'>
-                                        Co-founder / Product Lead / Product Designer
-                                    </div>
-                                    <div class='work-date'>
-                                        November 2013 - Present
-                                    </div>
-                                </div>
-                                <p class='work-description'>
-                                    Flexing those ui/ux muscles while leading the product. I base my decisions on data gathered from the app, this includes how users are using the app, where they are falling off and what they are intent on doing. This process allows me to be analytical as well as challenge myself with newer approaches.
-                                </p>
-                            </div>
-                            <div class='row'>
-                                <div class='work-header'>
-                                    <a class='work-company' href='http://fancrank.com/' target='_blank' alt='FanCrank Inc.'>
-                                        FanCrank Inc.
-                                    </a>
-                                    <div class='work-title'>
-                                        UI/UX Designer / Front-end Dev
-                                    </div>
-                                    <div class='work-date'>
-                                        October 2012 - July 2013
-                                    </div>
-                                </div>
-                                <p class='work-description'>
-                                    Worked on creating a Facebook app which rewards users with points based on their interactions on fan pages. Worked directly with the product manager and the team to create a seamless desktop and mobile experience.
-                                </p>
-                            </div>
-                            <div class='row'>
-                                <div class='work-header'>
-                                    <a class='work-company' href='http://infect.cutc.ca/' target='_blank' alt='CUTC'>
-                                        Canadian Undergraduate Technology Conference
-                                    </a>
-                                    <div class='work-title'>
-                                        UI/UX Designer / Front-end Dev
-                                    </div>
-                                    <div class='work-date'>
-                                        December 2011 - July 2013
-                                    </div>
-                                </div>
-                                <p class='work-description'>
-                                    Setting a visual identity for CUTC, branding and designing a majority of materials including mobile app, web pages, print and any other visual media.
-                                </p>
-                            </div>
-                            <div class='row'>
-                                <div class='work-header'>
-                                    <a class='work-company' href='http://genesys.com/' target='_blank' alt='Genesys'>
-                                        Genesys
-                                    </a>
-                                    <div class='work-title'>
-                                        UI/UX Intern
-                                    </div>
-                                    <div class='work-date'>
-                                        July 2012 - April 2013
-                                    </div>
-                                </div>
-                                <p class='work-description'>
-                                    Working as a user interface and user experience designer on various projects for mobile and desktop applications.
-                                </p>
-                            </div>
-                            <div class='row'>
-                                <div class='work-header'>
-                                    <a class='work-company' href='#'>
-                                        Various
-                                    </a>
-                                    <div class='work-title'>
-                                        Design Lead: Shoebox App, Neuranet Inc., HID Canada, BetterU, EPIC/EpCon
-                                    </div>
-                                    <div class='work-date'>
-                                        2009 - Present
-                                    </div>
-                                </div>
-                                <p class='work-description'>
-                                    User interface and user experience designer on various projects for mobile, tablets and desktop applications.
-                                </p>
-                            </div>
+                        {{/each}}
                         </div>
                     </div>
                 </div>
@@ -337,39 +295,6 @@
                                     <i class='icon-linkedin'></i>
                                 </a>
                             </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </script>
-
-    <script id="template-view" type="text/x-handlebars-template">
-        <div class='row animated slideInUp' id='project'>
-            <div class='row-content'>
-                <div class='fixed-width'>
-                    <div class='project-content'>
-                        <div class='heading'>
-                            {{title}}
-                        </div>
-                        <div class='description-long'>
-                            {{description_long}}
-                            {{#unless_blank download}}
-                            <div class="download">
-                                <a href='{{download}}' class='btn btn-green' target='_blank'>
-                                  Download
-                                </a>
-                            </div>
-                            {{/unless_blank}}
-                        </div>
-                        <div class='project'>
-                            {{#each this.attachments}}
-                              {{#each this}}
-                                  <div class='column'>
-                                      <img class='img-responsive lazy' data-original='{{this}}' />
-                                  </div>
-                              {{/each}}
-                            {{/each}}
                         </div>
                     </div>
                 </div>

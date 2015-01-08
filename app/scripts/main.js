@@ -1,6 +1,7 @@
 'use strict';
 
 var PortfolioURL = '/portfolio.json';
+var ResumeURL = '/resume.json';
 var windowHeight = $(window).height();
 var windowWidth = $(window).width();
 var hamburger = $('#hamburger');
@@ -94,6 +95,28 @@ var isMobile = {
         }
     });
 
+    var Resume = Backbone.Model.extend();
+
+    var ResumeCollection = Backbone.Collection.extend({
+        model: Resume,
+        url: ResumeURL,
+        initialize: function() {
+            this.fetch({
+                success: this.fetchSuccess,
+                error: this.fetchError
+            });
+        },
+
+        fetchSuccess: function(collection, response) {
+            // console.log('Collection fetch success', response);
+            // console.log(collection);
+        },
+
+        fetchError: function(collection, response) {
+            throw new Error('Something went wrong fetching the collection');
+        }
+    });
+
     var Router = Backbone.Router.extend({
         routes: {
             '': 'homeRoute',
@@ -104,7 +127,7 @@ var isMobile = {
             var homeView = Backbone.View.extend({
                 initialize: function() {
                     this.collection = new ItemsCollection();
-                    this.collection.bind("reset", _.bind(this.render, this));
+                    this.collection.bind('reset', _.bind(this.render, this));
                     this.render();
                 },
                 render: function() {
@@ -113,7 +136,8 @@ var isMobile = {
                         success: function(collection) {
                             var source = $('#template-home').html();
                             var template = Handlebars.compile(source);
-                            var html = template(that.collection.toJSON());
+                            var items = that.collection.toJSON();
+                            var html = template(items);
                             that.$el.html(html);
                             lazyLoad();
                         }
@@ -122,13 +146,36 @@ var isMobile = {
                 }
             });
             var HomeView = new homeView();
-            $("#content").html(HomeView.el);
+            $('#content').html(HomeView.el);
+
+            var resumeView = Backbone.View.extend({
+                initialize: function() {
+                    this.collection = new ResumeCollection();
+                    this.collection.bind('reset', _.bind(this.render, this));
+                    this.render();
+                },
+                render: function() {
+                    var that = this;
+                    this.collection.fetch({
+                        success: function(collection) {
+                            var source = $('#template-resume').html();
+                            var template = Handlebars.compile(source);
+                            var items = that.collection.toJSON();
+                            var html = template(items);
+                            that.$el.html(html);
+                        }
+                    });
+                    return that;
+                }
+            });
+            var ResumeView = new resumeView();
+            $('#content').append(ResumeView.$el);
         },
         viewRoute: function() {
             var itemsView = Backbone.View.extend({
                 initialize: function() {
                     this.collection = new ItemsCollection();
-                    this.collection.bind("reset", _.bind(this.render, this));
+                    this.collection.bind('reset', _.bind(this.render, this));
                     this.render();
                 },
                 render: function() {
