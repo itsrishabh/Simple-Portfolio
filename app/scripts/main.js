@@ -205,6 +205,7 @@ var isMobile = {
             });
             var ItemsView = new itemsView();
             $("#content").html(ItemsView.el);
+            scrollTop();
         }
     });
     var router = new Router();
@@ -220,9 +221,9 @@ var isMobile = {
 })();
 
 function closeMobileMenu() {
-    mobileMenu.addClass('fadeOutDown');
+    mobileMenu.addClass('slideOutUp');
     setTimeout(function() {
-        mobileMenu.removeClass('fadeOutDown').hide();
+        mobileMenu.removeClass('slideOutUp').hide();
     }, 500);
     $('body').removeClass('no-scroll');
 }
@@ -249,10 +250,14 @@ function smoothScroll() {
     });
 }
 
-$(function() {
-    $('img.lazy').lazyload();
-});
+function scrollTop() {
+    $('body, html').animate({
+        scrollTop: 0
+    }, 800);
+}
 
 function lazyLoad() {
-    $('img.lazy').lazyload();
-}
+    $('img.lazy').lazyload({
+        effect: 'fadeIn'
+    });
+};
