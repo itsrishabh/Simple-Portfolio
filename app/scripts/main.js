@@ -191,8 +191,9 @@ var isMobile = {
                             actualItem = actualItem[handledProject];
                             var html = template(actualItem);
                             var checkAttachments = actualItem.attachments;
+                            var displayType = actualItem.display_type;
                             that.$el.html(html);
-                            if (checkAttachments.length >= 6) {
+                            if (displayType && displayType === 'half') {
                                 $('.project .column').addClass('half');
                             } else {
                                 $('.project .column').addClass('full');

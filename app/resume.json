@@ -6,12 +6,19 @@
     "date_end": "Present",
     "description_job": "Working as a product designer means I usually have to hustle and get a lot done in a day. Between working directly on the iOS and Android apps, I code up all of the web pages, Firefox and Kik apps. I get to learn from a combined experience between working on code and designing for various platforms, mobile and desktop."
 }, {
+    "company": "Couch Labs Inc.",
+    "title": "UI/UX Designer (Contract)",
+    "external": "http://shoeboxapp.com/",
+    "date_start": "May 2014",
+    "date_end": "January 2015",
+    "description_job": "Did a contract for a photo backup and discovery application on iOS, Android, Desktop and Responsive Web. Explored various ways for users to discover photos from their past via the This Day in History feature. Worked alongside the team to execute on concepts, ux improvements and moments which increased user engagement."
+}, {
     "company": "Basmati Labs Inc.",
-    "title": "Co-founder / Product Designer",
+    "title": "Product Designer",
     "external": "http://getmyrice.com/",
     "date_start": "November 2013",
-    "date_end": "Present",
-    "description_job": "Flexing those ui/ux muscles while leading the product. I base my decisions on data gathered from the app, this includes how users are using the app, where they are falling off and what they are intent on doing. This process allows me to be analytical as well as challenge myself with newer approaches."
+    "date_end": "July 2014",
+    "description_job": "Flexing those ui/ux muscles while shaping the product. I base my decisions on data gathered from the app, this includes how users are using the app, where they are falling off and what they are intent on doing. This process allows me to be analytical as well as challenge myself with newer approaches."
 }, {
     "company": "FanCrank Inc.",
     "title": "UI/UX Designer / Front-end Dev",
@@ -35,7 +42,7 @@
     "description_job": "Working as a user interface and user experience designer on various projects for mobile and desktop applications."
 }, {
     "company": "Various",
-    "title": "Design Lead: Shoebox App, HID Canada, BetterU, EPIC/EpCon",
+    "title": "Design Lead: HID Canada, BetterU, EPIC/EpCon",
     "external": "#",
     "date_start": "2009",
     "date_end": "Present",
